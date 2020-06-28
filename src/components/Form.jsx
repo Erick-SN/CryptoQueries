@@ -22,6 +22,7 @@ const Button = styled.input`
 
 const Form = () => {
   const [list, setList] = useState([]);
+  const [error, setError] = useState(false);
   const COINS = [
     { code: 'USD', name: 'American Dollar' },
     { code: 'MXN', name: 'Mexican Peso' },
@@ -42,10 +43,18 @@ const Form = () => {
     };
     getData();
   }, []);
-
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (coin === '' || cryptoCoin === '') {
+      setError(true);
+      return;
+    }
+    setError(false);
+  };
   return (
     <>
-      <form>
+      <form onSubmit={onSubmit}>
+        {error ? 'error' : null}
         <CoinSelect />
         <SelectCrypto />
         <Button type='submit' value='Compute' />
