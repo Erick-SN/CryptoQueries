@@ -16,7 +16,7 @@ const Image = styled.img`
   margin-top: 5rem;
 `;
 const Heading = styled.h1`
-  font-family: 'Babas Neune', cursive;
+  font-family: 'Arial';
   color: #fff;
   text-align: left;
   font-weight: 700;

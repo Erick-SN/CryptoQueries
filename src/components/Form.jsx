@@ -25,7 +25,7 @@ const Form = () => {
     { code: 'EUR', name: 'Euro' },
     { code: 'GBP', name: 'Pound Sterling' },
   ];
-  const [coin, CoinSelect, setCoin] = useCoin('Choose your Coin', '', COINS);
+  const [coin, CoinSelect] = useCoin('Choose your Coin', '', COINS);
   return (
     <>
       <form>
