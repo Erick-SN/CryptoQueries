@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from '@emotion/styled';
 import useCoin from '../hooks/useCoin';
 import useCryptoCoin from '../hooks/useCryptoCoin';
+import Error from './Error';
 const Button = styled.input`
   margin-top: 20px;
   font-weight: bold;
@@ -54,7 +55,7 @@ const Form = () => {
   return (
     <>
       <form onSubmit={onSubmit}>
-        {error ? 'error' : null}
+        {error ? <Error message='All inputs are required' /> : null}
         <CoinSelect />
         <SelectCrypto />
         <Button type='submit' value='Compute' />
